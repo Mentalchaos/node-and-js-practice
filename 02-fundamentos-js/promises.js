@@ -29,8 +29,8 @@ const getEmpleado = id => {
     });
 };
 
-getEmpleado(3).then(empleado => {
-    console.log('Empleado de DB ', empleado);
-}, err => {
-    console.log(err);
+getEmpleado(4).then( empleado => {
+    console.log('success, Empleado id: ', empleado);
+}, error => { 
+    console.log('error' , error);
 });
