@@ -9,8 +9,7 @@ const empleados = [{
 {
     id: 3,
     nombre: 'Zeratul'
-}
-];
+}];
 
 const salarios = [{
     id: 1,
@@ -19,8 +18,7 @@ const salarios = [{
 {
     id: 2,
     salario: 2000
-}
-];
+}];
 
 const getSalario = empleado => {
     return new Promise((resolve,reject) => {
@@ -40,17 +38,17 @@ const getSalario = empleado => {
 const getEmpleado = id => {
     return new Promise ( (resolve, reject) => {
         const empleadoDB = empleados.find(empleado => empleado.id === id);
-        !empleadoDB ? reject(`No existe un empleado con el id ${id}`) : resolve(empleadoDB);
+        empleadoDB ? resolve(empleadoDB) : reject(`No existe un empleado con el id ${id}`);
     })
 }
 
-getEmpleado(2).then(empleado => {
+getEmpleado(4).then(empleado => {
     console.log('empleado', empleado);
 }, err => {
     console.log(err)
 });
 
-getSalario(1).then(salario => {
+getSalario(2).then(salario => {
     console.log(`Salario de ${salario.nombre} es de ${salario.salario}`);
 }, err => {
     console.log(err);
