@@ -42,10 +42,10 @@ const getEmpleado = id => {
     })
 }
 
-getEmpleado(4).then(empleado => {
+getEmpleado(2).then(empleado => {
     console.log('empleado', empleado);
 }, err => {
-    console.log(err)
+    console.log(err);
 });
 
 getSalario(2).then(salario => {
